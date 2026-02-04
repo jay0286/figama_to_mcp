@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
+import 'core/theme/app_theme.dart';
+import 'features/home/presentation/screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const YogaApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class YogaApp extends StatelessWidget {
+  const YogaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Yoga App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFF9644)),
-        useMaterial3: true,
-        fontFamily: 'Pretendard',
-      ),
-      home: const HomePage(),
+      theme: appLightTheme,
+      darkTheme: appDarkTheme,
+      themeMode: ThemeMode.system,
+      home: const HomeScreen(),
     );
   }
 }
